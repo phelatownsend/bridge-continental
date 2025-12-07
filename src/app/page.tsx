@@ -3,6 +3,21 @@
 import { useState } from 'react';
 import Image from 'next/image';
 
+// =========================================================================
+// IMAGES IMPORT
+// Folder: "src/Images" (Capital I)
+// Logo File: "bridge-continental-logo.png"
+// =========================================================================
+
+import logoImg from '../Images/bridge-continental-logo.png';
+import infraImg from '../Images/infra.png';
+import rawImg from '../Images/raw.png';
+import energyImg from '../Images/energy.png';
+import housingImg from '../Images/housing.png';
+import financialImg from '../Images/financial.png';
+import farmingImg from '../Images/farming.png';
+import contactBgImg from '../Images/contact_us.png';
+
 export default function Home() {
   const [open, setOpen] = useState(false); // State for mobile menu
 
@@ -11,15 +26,14 @@ export default function Home() {
       <header className="sticky top-0 z-50 backdrop-blur supports-[backdrop-filter]:bg-white/70 border-b border-neutral-200">
         <div className="max-w-7xl mx-auto px-4">
           <div className="flex items-center justify-between h-20">
-            {/* LOGO FIX: Ensure "bridge-continental-logo.png" exists in "public/images/" */}
             <a href="/" className="flex items-center">
               <Image
-                src="/images/bridge-continental-logo.png" 
+                src={logoImg} 
                 alt="Bridge Continental Advisory Group Logo"
                 width={120}
                 height={50}
                 priority
-                style={{ objectFit: 'contain' }} // Added to ensure logo doesn't stretch
+                style={{ objectFit: 'contain' }}
               />
             </a>
 
@@ -27,7 +41,7 @@ export default function Home() {
               ☰
             </button>
 
-            {/* UPDATED NAV */}
+            {/* NAV LINKS */}
             <nav className="hidden md:flex items-center gap-2 text-base md:text-lg font-normal text-neutral-700">
               <a href="#about" className="px-4 py-2 rounded-full transition-colors hover:bg-[#1E3A8A] hover:text-white">About</a>
               <a href="#services" className="px-4 py-2 rounded-full transition-colors hover:bg-[#1E3A8A] hover:text-white">What We Do</a>
@@ -63,7 +77,7 @@ export default function Home() {
 
       {/* ===== HERO SECTION ===== */}
       <section className="relative py-24 md:py-28 text-white overflow-hidden">
-        {/* VIDEO FIX: Ensure "my-video.mp4" is in the ROOT of "public/" (not in images folder) */}
+        {/* VIDEO remains string path because it's in PUBLIC folder */}
         <video
           autoPlay
           loop
@@ -170,22 +184,23 @@ export default function Home() {
         {/* ===== ENGAGEMENT AREAS ===== */}
         <section id="sectors" className="py-24 border-t border-neutral-200 bg-white">
           <div className="max-w-6xl mx-auto px-4 text-center">
+            
             <h2 className="font-serif text-4xl text-[#1E293B] font-bold">Engagement Areas</h2>
             <p className="mt-6 max-w-3xl mx-auto text-neutral-600 text-lg leading-relaxed">
               Our engagement areas reflect strategic opportunities for collaboration and impact. We focus on domains where our networks, insight, and access enable meaningful results.
             </p>
             
             <div className="mt-16 grid gap-6 md:grid-cols-3 items-stretch">
-              {/* IMAGE FIXES: Ensure these files exist in "public/images/" */}
               
               {/* ===== Infrastructure Card ===== */}
               <div className="flex flex-col h-full hover:shadow-lg transition-shadow duration-300">
                 <div className="relative w-full h-64 overflow-hidden">
                    <Image
-                    src="/images/infra.png"
+                    src={infraImg}
                     alt="Infrastructure background"
                     fill
                     className="object-cover"
+                    placeholder="blur" 
                   />
                 </div>
                 <div className="bg-white p-6 border-x border-b border-neutral-200 text-left flex-grow flex items-center">
@@ -197,10 +212,11 @@ export default function Home() {
               <div className="flex flex-col h-full hover:shadow-lg transition-shadow duration-300">
                 <div className="relative w-full h-64 overflow-hidden">
                   <Image
-                    src="/images/raw.png"
+                    src={rawImg}
                     alt="Critical Raw Materials background"
                     fill
                     className="object-cover"
+                    placeholder="blur"
                   />
                 </div>
                 <div className="bg-white p-6 border-x border-b border-neutral-200 text-left flex-grow flex items-center">
@@ -212,10 +228,11 @@ export default function Home() {
               <div className="flex flex-col h-full hover:shadow-lg transition-shadow duration-300">
                 <div className="relative w-full h-64 overflow-hidden">
                   <Image
-                    src="/images/energy.png"
+                    src={energyImg}
                     alt="Energy & Transition background"
                     fill
                     className="object-cover"
+                    placeholder="blur"
                   />
                 </div>
                 <div className="bg-white p-6 border-x border-b border-neutral-200 text-left flex-grow flex items-center">
@@ -227,10 +244,11 @@ export default function Home() {
               <div className="flex flex-col h-full hover:shadow-lg transition-shadow duration-300">
                 <div className="relative w-full h-64 overflow-hidden">
                   <Image
-                    src="/images/housing.png"
+                    src={housingImg}
                     alt="Housing & Urban Systems background"
                     fill
                     className="object-cover"
+                    placeholder="blur"
                   />
                 </div>
                 <div className="bg-white p-6 border-x border-b border-neutral-200 text-left flex-grow flex items-center">
@@ -242,10 +260,11 @@ export default function Home() {
               <div className="flex flex-col h-full hover:shadow-lg transition-shadow duration-300">
                 <div className="relative w-full h-64 overflow-hidden">
                   <Image
-                    src="/images/financial.png"
+                    src={financialImg}
                     alt="Financial Systems background"
                     fill
                     className="object-cover"
+                    placeholder="blur"
                   />
                 </div>
                 <div className="bg-white p-6 border-x border-b border-neutral-200 text-left flex-grow flex items-center">
@@ -257,10 +276,11 @@ export default function Home() {
               <div className="flex flex-col h-full hover:shadow-lg transition-shadow duration-300">
                 <div className="relative w-full h-64 overflow-hidden">
                   <Image
-                    src="/images/farming.png"
+                    src={farmingImg}
                     alt="Agriculture & Food Systems background"
                     fill
                     className="object-cover"
+                    placeholder="blur"
                   />
                 </div>
                 <div className="bg-white p-6 border-x border-b border-neutral-200 text-left flex-grow flex items-center">
@@ -280,19 +300,14 @@ export default function Home() {
             </p>
 
             <div className="mt-16 grid gap-6 md:grid-cols-3 items-stretch">
-              {/* Leader 1 */}
               <div className="bg-white p-8 border border-neutral-200 text-center hover:shadow-lg transition-shadow duration-300 h-full">
                 <h3 className="font-serif text-xl font-bold text-[#1E293B]">Femi Akinbi</h3>
                 <p className="text-sm text-neutral-500 font-medium mt-1">Founding Partner</p>
               </div>
-
-              {/* Leader 2 */}
               <div className="bg-white p-8 border border-neutral-200 text-center hover:shadow-lg transition-shadow duration-300 h-full">
                 <h3 className="font-serif text-xl font-bold text-[#1E293B]">Makol Malwal</h3>
                 <p className="text-sm text-neutral-500 font-medium mt-1">Founding Partner</p>
               </div>
-
-              {/* Leader 3 */}
               <div className="bg-white p-8 border border-neutral-200 text-center hover:shadow-lg transition-shadow duration-300 h-full">
                 <h3 className="font-serif text-xl font-bold text-[#1E293B]">Phela Townsend, PhD</h3>
                 <p className="text-sm text-neutral-500 font-medium mt-1">Founding Partner</p>
@@ -324,19 +339,17 @@ export default function Home() {
         {/* ===== CONTACT SECTION ===== */}
         <section id="contact" className="relative py-24 border-t border-neutral-200 text-white overflow-hidden">
           
-          {/* Background Image Layer */}
           <Image
-            src="/images/contact_us.png"
+            src={contactBgImg}
             alt="Contact section background"
             fill
             className="object-cover object-center z-0"
             priority={false}
+            placeholder="blur"
           />
 
-          {/* Opacity Overlay Layer */}
           <div className="absolute inset-0 bg-gradient-to-t from-[#0B1E55]/95 to-[#1E3A8A]/85 z-10"></div>
 
-          {/* Content Layer */}
           <div className="relative z-20 max-w-3xl mx-auto px-4 text-center">
             <h2 className="font-serif text-3xl md:text-5xl font-semibold">Contact</h2>
             <p className="mt-3 text-[#E2E8F0]">For confidential inquiries and collaboration opportunities, please reach out directly.</p>
@@ -352,9 +365,6 @@ export default function Home() {
           <div className="flex flex-wrap items-center justify-between gap-4">
             <p>© {new Date().getFullYear()} Bridge Continental Advisory Group</p>
             <nav className="flex items-center gap-4">
-              {/* <a href="#" className="hover:text-[#1E293B]">LinkedIn</a>
-              <a href="#" className="hover:text-[#1E293B]">Privacy</a>
-              <a href="#" className="hover:text-[#1E293B]">Terms</a> */}
             </nav>
           </div>
         </div>
