@@ -11,13 +11,15 @@ export default function Home() {
       <header className="sticky top-0 z-50 backdrop-blur supports-[backdrop-filter]:bg-white/70 border-b border-neutral-200">
         <div className="max-w-7xl mx-auto px-4">
           <div className="flex items-center justify-between h-20">
+            {/* LOGO FIX: Ensure "bridge-continental-logo.png" exists in "public/images/" */}
             <a href="/" className="flex items-center">
               <Image
-                src="/images/bridge-continental-logo.png"
+                src="/images/bridge-continental-logo.png" 
                 alt="Bridge Continental Advisory Group Logo"
                 width={120}
                 height={50}
                 priority
+                style={{ objectFit: 'contain' }} // Added to ensure logo doesn't stretch
               />
             </a>
 
@@ -25,7 +27,7 @@ export default function Home() {
               ☰
             </button>
 
-            {/* UPDATED NAV: Reduced gap to gap-2, added padding/hover styles to links */}
+            {/* UPDATED NAV */}
             <nav className="hidden md:flex items-center gap-2 text-base md:text-lg font-normal text-neutral-700">
               <a href="#about" className="px-4 py-2 rounded-full transition-colors hover:bg-[#1E3A8A] hover:text-white">About</a>
               <a href="#services" className="px-4 py-2 rounded-full transition-colors hover:bg-[#1E3A8A] hover:text-white">What We Do</a>
@@ -40,6 +42,7 @@ export default function Home() {
           </div>
         </div>
 
+        {/* MOBILE MENU */}
         {open && (
           <div className="md:hidden bg-white border-t border-neutral-200 shadow-lg">
             <div className="max-w-7xl mx-auto px-4 py-4 grid gap-3">
@@ -60,6 +63,7 @@ export default function Home() {
 
       {/* ===== HERO SECTION ===== */}
       <section className="relative py-24 md:py-28 text-white overflow-hidden">
+        {/* VIDEO FIX: Ensure "my-video.mp4" is in the ROOT of "public/" (not in images folder) */}
         <video
           autoPlay
           loop
@@ -120,7 +124,6 @@ export default function Home() {
             </p>
 
             <div className="mt-16 grid gap-6 md:grid-cols-2 lg:grid-cols-4 items-stretch">
-              
               {/* Card 1 */}
               <div className="bg-white p-8 border border-neutral-200 flex flex-col items-center text-center shadow-sm hover:shadow-md transition-shadow duration-300 h-full">
                 <h3 className="font-serif text-xl font-bold text-[#1E293B] mb-4 min-h-[56px] flex items-center justify-center">
@@ -160,7 +163,6 @@ export default function Home() {
                   We guide stakeholders to shape and deliver initiatives that build resilience, empower people, and sustain lasting progress.
                 </p>
               </div>
-
             </div>
           </div>
         </section>
@@ -168,15 +170,13 @@ export default function Home() {
         {/* ===== ENGAGEMENT AREAS ===== */}
         <section id="sectors" className="py-24 border-t border-neutral-200 bg-white">
           <div className="max-w-6xl mx-auto px-4 text-center">
-            
-            {/* Header Section */}
             <h2 className="font-serif text-4xl text-[#1E293B] font-bold">Engagement Areas</h2>
             <p className="mt-6 max-w-3xl mx-auto text-neutral-600 text-lg leading-relaxed">
               Our engagement areas reflect strategic opportunities for collaboration and impact. We focus on domains where our networks, insight, and access enable meaningful results.
             </p>
             
-            {/* Grid Layout */}
             <div className="mt-16 grid gap-6 md:grid-cols-3 items-stretch">
+              {/* IMAGE FIXES: Ensure these files exist in "public/images/" */}
               
               {/* ===== Infrastructure Card ===== */}
               <div className="flex flex-col h-full hover:shadow-lg transition-shadow duration-300">
@@ -267,7 +267,6 @@ export default function Home() {
                   <h3 className="font-serif text-2xl font-bold text-[#1E293B]">Agriculture & Food Systems</h3>
                 </div>
               </div>
-
             </div>
           </div>
         </section>
@@ -281,7 +280,6 @@ export default function Home() {
             </p>
 
             <div className="mt-16 grid gap-6 md:grid-cols-3 items-stretch">
-              
               {/* Leader 1 */}
               <div className="bg-white p-8 border border-neutral-200 text-center hover:shadow-lg transition-shadow duration-300 h-full">
                 <h3 className="font-serif text-xl font-bold text-[#1E293B]">Femi Akinbi</h3>
@@ -299,7 +297,6 @@ export default function Home() {
                 <h3 className="font-serif text-xl font-bold text-[#1E293B]">Phela Townsend, PhD</h3>
                 <p className="text-sm text-neutral-500 font-medium mt-1">Founding Partner</p>
               </div>
-
             </div>
           </div>
         </section>
@@ -336,7 +333,7 @@ export default function Home() {
             priority={false}
           />
 
-          {/* Opacity Overlay Layer (Dark blue gradient with high opacity for readability) */}
+          {/* Opacity Overlay Layer */}
           <div className="absolute inset-0 bg-gradient-to-t from-[#0B1E55]/95 to-[#1E3A8A]/85 z-10"></div>
 
           {/* Content Layer */}
